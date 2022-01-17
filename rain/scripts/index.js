@@ -8,7 +8,7 @@ let mouseY = -1
 function durationSetup() {
   let i = 0
   while (i < amount) {
-    duration.push(Math.random() * 5 + 1)
+    duration.push(Math.random() * 5 + 2)
     i++
   }
 }
@@ -21,7 +21,7 @@ function rain() {
 
     const size = 0.5 + Math.random() * 5
     const posX = Math.floor(Math.random() * window.innerWidth)
-    const delay = Math.random() * -20
+    const delay = Math.random() * -30
 
     drop.style.width = size + "px"
     drop.style.left = posX + "px"
@@ -33,7 +33,7 @@ function rain() {
   }
 }
 
-document.onmousemove = (event) => {
+const slowRain = (event) => {
   const dropList = document.querySelectorAll("i")
   mouseX = event.pageX
   mouseY = event.pageY
@@ -49,5 +49,7 @@ document.onmousemove = (event) => {
     i++
   }
 }
+
+window.addEventListener("mousemove", (event) => slowRain(event))
 
 rain()
