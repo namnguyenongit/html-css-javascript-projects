@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>Search tag</title>
+</head>
+<body>
+  <div class="cover">
+    <h2>Search Tags</h2>
+    <div class="main">
+      <div class="tags-cover"></div>
+      <input 
+        class="input" 
+        type="text" 
+        placeholder="Type and enter"
+        onkeydown="addTag(this, event)">
+    </div>
+    <button onclick="removeAll()">Remove All</button>
+  </div>
+  <script src="./script/index.js"></script>
+</body>
+</html>
