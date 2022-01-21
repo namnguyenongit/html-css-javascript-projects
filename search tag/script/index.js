@@ -1,38 +1,47 @@
 const tagsCover = document.querySelector('.tags-cover')
 const input = document.querySelector('.input')
 
-const tagList = []
+const tagList = new Set()
 
 const render = () => {
-  const html = tagList
-    .map((tag, id) => {
-      return `<div class="tag">
-          ${tag.name} 
+  let html = ''
+  for (let value of tagList.values()) {
+    html += `<div class="tag">
+          ${value}
           <span
-            class="remove"
-            onclick="removeTag(${id})">
+            class="remove delete-${value}">
             &times;
           </span>
         </div>`
-    })
-    .join('')
+  }
   tagsCover.innerHTML = html
 }
 
-const addTag = (e, event) => {
-  if (event.key === 'Enter' && e.value !== '') {
-    tagList.push({ name: e.value })
-    input.value = ''
-    render()
+const listen = () => {
+  for (let value of tagList.values()) {
+    document
+      .querySelector(`.delete-${value}`)
+      .addEventListener('click', (event) => {
+        tagList.delete(event.target.classList[1].substring(7))
+        render()
+        listen()
+      })
   }
 }
 
-const removeTag = (id) => {
-  tagList.splice(id, 1)
-  render()
+render()
+listen()
+
+const addTag = (e, event) => {
+  if (event.key === 'Enter' && e.value !== '') {
+    tagList.add(e.value)
+    input.value = ''
+    render()
+    listen()
+  }
 }
 
 const removeAll = () => {
-  while (tagList.length > 0) tagList.pop()
+  tagList.clear()
   render()
 }
