@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>Form validate</title>
+</head>
+<body>
+  <div class="form">
+    <div class='title'>Register</div>
+    <form onsubmit='validateForm(event)' name='register'>
+      <div class="form-control">
+        <input id='name' type="text" name="name" placeholder='Username'>
+        <span class="require"></span>
+      </div>
+      <div class="form-control">
+        <input id='email' type="email" name="email" placeholder='Email'>
+        <span class="require"></span>
+      </div>
+      <div class="form-control">
+        <input id='password' type="password" name="password" placeholder='Password'>
+        <span class="require"></span>
+      </div>
+      <div class="form-control">
+        <input id='confirm' type="password" name="confirm" placeholder='Confirm password'>
+        <span class="require"></span>
+      </div>
+      <input type="submit" formnovalidate class='submit-btn' value='Submit'></input>
+    </form>
+    <div class='change-mode'>Not a member? <a href="#">Login</a></div>
+  </div>
+  <script src="./script/index.js"></script>
+</body>
+</html>
