@@ -6,10 +6,9 @@
 
 body {
   background-color: #000;
-  height: 100vh !important;
+  height: 100vh;
   overflow: hidden;
   position: relative;
-  cursor: url("https://img.icons8.com/color/48/000000/umbrella.png"), pointer;
 }
 
 i {
