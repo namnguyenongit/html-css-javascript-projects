@@ -5,7 +5,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      margin: 4rem 0;
+    }
+    ul {
+      display: flex;
+      text-align: center;
+      margin: 0 4rem;
+      flex-wrap: wrap;
+      box-shadow: 3px 3px 10px #ccc;
+    }
+    li {
+      list-style-type: none;
+      width: 25%;
+      padding: 1rem;
+      background-color: rgb(236, 236, 236);
+      border: 1px solid rgba(0, 0, 0, 0.082);
+    }
+    li > a {
+      text-decoration: none;
+      color: black;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    li:hover {
+      background-color: rgb(255, 255, 255);
+    }
+    li > a:hover {
+      color: rgb(0, 38, 255);
+    }
+  </style>
 </head>
+  <h1>Click to view content</h1>
   <ul>
     <li>
       <a href="./product card/index.html">Product card</a>
