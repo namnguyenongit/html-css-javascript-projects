@@ -1,31 +1,31 @@
-const grid = document.querySelector(".grid")
-const carousel = document.querySelector(".carousel")
-const displayImage = document.querySelector("#displayImage")
-const blur = document.querySelector(".blur")
+const grid = document.querySelector('.grid')
+const carousel = document.querySelector('.carousel')
+const displayImage = document.querySelector('#displayImage')
+const blur = document.querySelector('.blur')
 let currentIndex = 0
 
 const imagesList = [
-  { link: "https://wallpaperaccess.com/full/1322976.jpg" },
+  { link: 'https://images.alphacoders.com/915/thumbbig-915758.webp' },
   {
-    link: "https://i0.wp.com/static1.srcdn.com/wordpress/wp-content/uploads/2021/03/Among-Us-Random-Name-Generator.jpg?w=750&ssl=1",
+    link: 'https://images3.alphacoders.com/852/thumbbig-852216.webp',
   },
   {
-    link: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimagesvc.meredithcorp.io%2Fv3%2Fmm%2Fimage%3Furl%3Dhttps%253A%252F%252Fstatic.onecms.io%252Fwp-content%252Fuploads%252Fsites%252F13%252F2015%252F04%252F05%252Ffeatured.jpg&q=85",
+    link: 'https://images8.alphacoders.com/625/thumbbig-625703.webp',
   },
   {
-    link: "https://media.contentapi.ea.com/content/dam/eacom/lost-in-random/images/2021/08/lir-usp-in-engine-screen-twotown-royam-no-logo.jpg.adapt.crop191x100.628p.jpg",
+    link: 'https://images3.alphacoders.com/675/thumbbig-675453.webp',
   },
   {
-    link: "https://aot-wpengine.netdna-ssl.com/wp-content/uploads/2014/04/animal_facts-e1396431549968.jpg",
+    link: 'https://images8.alphacoders.com/675/thumbbig-675452.webp',
   },
   {
-    link: "https://trainghiemso.vn/wp-content/uploads/2021/09/lost-in-random-review-featured.jpg",
+    link: 'https://images8.alphacoders.com/693/thumbbig-693738.webp',
   },
   {
-    link: "https://machinelearningmastery.com/wp-content/uploads/2018/07/How-to-Generate-Random-Numbers-in-Python.jpg",
+    link: 'https://images4.alphacoders.com/693/thumbbig-693780.webp',
   },
   {
-    link: "http://images2.fanpop.com/images/photos/5900000/Randomness-random-5997130-1280-800.jpg",
+    link: 'https://images8.alphacoders.com/824/thumbbig-824233.webp',
   },
 ]
 
@@ -36,7 +36,7 @@ const setup = () => {
       <img src=${image.link}>
     </div>`
     })
-    .join("")
+    .join('')
   grid.innerHTML = html
 }
 
@@ -48,7 +48,7 @@ const setCarouselImage = (index) => {
 const preview = (index) => {
   currentIndex = index
   setCarouselImage(currentIndex)
-  carousel.classList.remove("hide")
+  carousel.classList.remove('hide')
 }
 
 const next = () => {
@@ -66,7 +66,7 @@ const previous = () => {
 }
 
 const turnOff = () => {
-  carousel.classList.add("hide")
+  carousel.classList.add('hide')
 }
 
 setup()
