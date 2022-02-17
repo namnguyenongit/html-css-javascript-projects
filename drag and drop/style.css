@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #caf0f8;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container {
+  width: 200px;
+  height: 200px;
+  border: 5px solid #90e0ef;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: #00b4d8;
+  border-radius: 10px;
+  cursor: grab;
+}
+
+.hide {
+  display: none;
+}
+
+.drag-over {
+  border: 5px dashed #03045e;
+}
