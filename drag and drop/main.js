@@ -34,15 +34,15 @@ const drop = (e) => {
 
 const dragEnd = (e) => {
   e.preventDefault()
-  item.classList.remove('hide')
+  e.target.classList.remove('hide')
 }
 
 item.addEventListener('dragstart', dragStart)
+item.addEventListener('dragend', dragEnd)
 
 containers.forEach((container) => {
   container.addEventListener('dragenter', dragEnter)
   container.addEventListener('dragover', dragOver)
   container.addEventListener('dragleave', dragLeave)
-  container.addEventListener('dragend', dragEnd)
   container.addEventListener('drop', drop)
 })
