@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  --hover: #e5e5e5;
+  --background: #fff;
+  --text: #000;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--hover);
+}
+
+body.dark-mode {
+  --background: #212121;
+  --hover: #383838;
+  --text: #fff;
+}
+
+button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text);
+  background-color: var(--background);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.side-bar {
+  color: var(--text);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 508px;
+}
+
+.tags {
+  height: 100%;
+  transition: all ease 0.2s;
+}
+
+.header,
+.tags {
+  background-color: var(--background);
+}
+
+.tags.shrink {
+  transform: translateX(-57%);
+  transition: all ease 0.2s;
+}
+
+.tag {
+  transition: all ease 0.2s;
+}
+
+.header,
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  cursor: pointer;
+  padding: 1rem 3rem;
+}
+
+.tag.focus {
+  flex-direction: column;
+  transition: all ease 0.2s;
+  gap: 0;
+  padding: 0.5rem 3rem;
+}
+
+.tag.focus > img,
+.tag.focus > span {
+  transform: translateX(77px);
+  transition: all ease 0.2s;
+}
+
+.tag.focus > span {
+  font-size: 0.6rem;
+}
+
+.tag:hover {
+  background-color: var(--hover);
+}
+
+li {
+  list-style-type: none;
+}
+
+.hide {
+  display: none;
+}
+
+/* filter for svg icons */
+.dark-mode-icon {
+  filter: invert(98%) sepia(98%) saturate(7%) hue-rotate(147deg)
+    brightness(101%) contrast(102%);
+}

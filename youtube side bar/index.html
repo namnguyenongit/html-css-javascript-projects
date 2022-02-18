@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Toggle</title>
+  </head>
+  <body>
+    <button>Change</button>
+    <div class="side-bar">
+      <section class="header">
+        <div class="menu">
+          <img src="./images/light/menu.svg" />
+        </div>
+        <div class="yt-logo">
+          <img src="./images/light/logo.svg" class="logo" />
+        </div>
+      </section>
+
+      <!-- TAGS -->
+
+      <section class="tags">
+        <ul>
+          <li class="tag key">
+            <img src="./images/light/home.svg" />
+            <span>Trang chủ</span>
+          </li>
+          <li class="tag key">
+            <img src="./images/light/compass.svg" />
+            <span>Khám phá</span>
+          </li>
+          <li class="tag key">
+            <img src="./images/light/sub.svg" />
+            <span>Kênh đăng ký</span>
+          </li>
+          <li class="tag key">
+            <img src="./images/light/lib.svg" />
+            <span>Thư viện</span>
+          </li>
+          <li class="tag">
+            <img src="./images/light/history.svg" />
+            <span>Video đã xem</span>
+          </li>
+          <li class="tag">
+            <img src="./images/light/my-vid.svg" />
+            <span>Video của bạn</span>
+          </li>
+          <li class="tag">
+            <img src="./images/light/save.svg" />
+            <span>Xem sau</span>
+          </li>
+          <li class="tag">
+            <img src="./images/light/like.svg" />
+            <span>Video đã thích</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script>
+      function toggleDarkMode() {
+        const body = document.body
+        const images = document.querySelectorAll('img:not(.logo)')
+        const logo = document.querySelector('.logo')
+
+        images.forEach((img) => {
+          img.classList.toggle('dark-mode-icon')
+        })
+        //if src of logo is light, change to dark and reverse
+        if (logo.src.includes('light')) {
+          logo.src = './images/dark/logo.svg'
+        } else {
+          logo.src = './images/light/logo.svg'
+        }
+        body.classList.toggle('dark-mode')
+      }
+      const changeMode = document.querySelector('button')
+      changeMode.addEventListener('click', toggleDarkMode)
+
+      const toggleShrink = () => {
+        const tags = document.querySelector('.tags')
+        const notKey = document.querySelectorAll('.tag:not(.key)')
+        const isKey = document.querySelectorAll('.tag.key')
+
+        tags.classList.toggle('shrink')
+        notKey.forEach((tag) => {
+          tag.classList.toggle('hide')
+        })
+        isKey.forEach((tag) => {
+          tag.classList.toggle('focus')
+        })
+      }
+      const menu = document.querySelector('.menu')
+      menu.addEventListener('click', toggleShrink)
+    </script>
+  </body>
+</html>
